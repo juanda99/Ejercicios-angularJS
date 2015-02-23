@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href=" node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TiendaController as tienda">
+    <div class="container">
+        <div class="row" ng-repeat="fila in tienda.filas">
+            <div ng-class="{'col-sm-4': tienda.numColumnas == 3, 'col-sm-3': tienda.numColumnas == 4}" ng-repeat="producto in fila">
+                <h4>
+            {{producto.nombre}} 
+            <span class="label" ng-class="tienda.stockClass({{producto.stock}})">Stock: {{producto.stock}}</span>
+            </h4>
+                <p>{{producto.precio|currency}}</p>
+                    <img class="img-responsive" ng-src="{{producto.imagen}}">
+                    <button type="button" class="btn btn-primary pull-right" ng-disabled="producto.stock===0">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Añadir al carro</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/angular-locale_es-es.js"></script>
+    <script src="scripts/app7b.js"></script>
+</body>
+
+</html>
+
+<!-- Observaciones:
+    Hasta donde yo se, la única posibilidad que tenemos es de recorrer dos bucles. Obtener el número de filas y luego dos ng-repeat, uno por cada fila y otro por cada producto dentro de una fila determinada.
+
+    Observa que he definido la variable numColumnas de modo que podríamos cambiar la configuración. Incluso esto podría hacerse de modo dinámico configurando un campo en el html con el atributo ng-model y en caso de que cambiase, recalculando el número de filas mediante un observador ($watch). Esto se escapa del alcance del curso :-(
+
+ -->

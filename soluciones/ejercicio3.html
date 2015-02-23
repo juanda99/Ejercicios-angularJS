@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TiendaController as tienda">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>{{tienda.producto.nombre}}</h4>
+                <p>{{(tienda.producto.precio)}} €</s>
+                <img  class="img-responsive" ng-src="{{tienda.producto.imagen}}">
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/app3.js"></script>
+</body>
+
+</html>
+
+<!-- Comentarios solución: 
+Observa que no podemos utilizar el atributo src para la imagen ya que su valor se obtiene mediante Angular. Para este y otros atributos que se calculen de forma dinámica, Angular nos proporciona unos atributos adicionales que empiezan con el prefijo ng-: 
+ng-src, ng-class, ng-disabled...
+La clase img-responsive para la imagen hace que tenga un ancho del 100% y un alto "auto". Así conseguimos que se contenga dentro de su objeto contenedor.
+-->
+
+

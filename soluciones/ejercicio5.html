@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href=" node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TiendaController as tienda">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>
+            {{tienda.producto.nombre}} 
+            </h4>
+                <p>{{tienda.producto.precio|currency}}</p>
+                    <img class="img-responsive" ng-src="{{tienda.producto.imagen}}">
+                    <button type="button" class="btn btn-primary pull-right" ng-disabled="!tienda.producto.stock">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Añadir al carro</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/angular-locale_es-es.js"></script>
+    <script src="scripts/app5.js"></script>
+</body>
+
+</html>
+
+<!-- Observaciones:
+Cuando hay stock (stock=true) ng-disabled deb ser false, así que debemos hacer una negación: ng-disabled="!tienda.producto.stock" 
+
+ng-src era un atributo que necesitaba {{}} para marcar el contenido como expresión. Sin embargo con ng-disabled no pasa igual: directamente lo que está en su interior se considera expresión. Por norma general será de esta forma.
+
+Hay pocas directivas que necesitan llaves en sus atributos. Normalmente es para casos donde se suele mezclar strings con código JavaScript:
+<img ng-src="/images/{{tool.icon_name}}.png" />
+<a ng-href="http://google.com?q={{query}}">See Google Results</a>
+
+-->

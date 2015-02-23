@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+    	body{margin-top: 20px;}
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="well">
+        <p>Si en el texto siguiente aparece 12 en un recuadro, tenemos nuestra plantilla de Angular-Bootstrap de forma correcta: </p>
+        <p>{{7+5}}</p>
+    </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/app1.js"></script>
+</body>
+
+</html>
+
+<!-- Los datos que se ponen entre {{ }} son expresiones que interpretará angularjs.
+   Las expresiones se pueden crear en el "interior" de cualquier etiqueta html, siempre y cuando dicha etiqueta sea hija de la etiqueta donde se coloque la directiva ng-app. La directiva ng-app marca el ámbito de la aplicación angularjs dentro del html. Lo normal es que ng-app se coloque en el comienzo del doc, en la etiqueta html.
+-->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TiendaController as tienda">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>{{tienda.producto.nombre}}</h4>
+                <p>{{tienda.producto.precio|currency}}</s>
+                <img  class="img-responsive" ng-src="{{tienda.producto.imagen}}">
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/angular-locale_es-es.js"></script>
+    <script src="scripts/app4.js"></script>
+</body>
+
+</html>
+
+<!-- Comentarios solución: 
+Hemos cargado el fichero angular-locale_es-es.js con la localización. Está descargado de la web de Angular https://angularjs.org/, dando al botón de descarga y pulsando luego en "Extras: Browse Additional Modules"
+Luego es simplemente añadir en filtro que se hace mediante el simbolo | (pipe) y el nombre del filtro corresponiente. Hemos utilizado un filtro ya existente, posteriormente veremos como crearnos nosotros mismos el filtro si no hubiera uno.
+-->
+
+

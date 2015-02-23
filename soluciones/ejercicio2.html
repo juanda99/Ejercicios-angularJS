@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TiendaController as tienda">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>{{tienda.producto.nombre}}</h4>
+                <p>{{(tienda.producto.precio)}}</s>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/app2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href=" node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TiendaController as tienda">
+    <div class="container">
+        <div class="row">
+            <div ng-repeat="producto in tienda.productos" class="col-sm-4">
+                <h4>
+            {{producto.nombre}} 
+            <span class="label" ng-class="tienda.stockClass({{producto.stock}})">Stock: {{producto.stock}}</span>
+            </h4>
+                <p>{{producto.precio|currency}}</p>
+                    <img class="img-responsive" ng-src="{{producto.imagen}}">
+                    <button type="button" class="btn btn-primary pull-right" ng-disabled="producto.stock===0">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Añadir al carro</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/angular-locale_es-es.js"></script>
+    <script src="scripts/app7.js"></script>
+</body>
+
+</html>
+
+<!-- Observaciones:
+
+
+ -->

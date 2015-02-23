@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href=" node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TiendaController as tienda">
+    <div class="container">
+        <div class="row" ng-repeat="fila in tienda.filas">
+            <div ng-class="{'col-sm-4': tienda.numColumnas == 3, 'col-sm-3': tienda.numColumnas == 4}" ng-repeat="producto in fila">
+                <h4>
+            {{producto.nombre}} <br>
+            <span class="label label-success">Descuento: {{producto.descuento}}%</span>
+            <span class="label" ng-class="tienda.stockClass({{producto.stock}})">Stock: {{producto.stock}}</span>
+            </h4>
+                <p>
+                <s>{{producto.precio|currency}}</s>
+                <strong>{{(producto.precio - producto.precio*producto.descuento/100)|currency}}</strong>
+                </p>
+                    <img class="img-responsive" ng-src="{{producto.imagen}}">
+                    <button type="button" class="btn btn-primary pull-right" ng-disabled="producto.stock===0">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Añadir al carro</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/angular-locale_es-es.js"></script>
+    <script src="scripts/app8.js"></script>
+</body>
+
+</html>
+
+<!-- Observaciones:
+    
+
+
+ -->

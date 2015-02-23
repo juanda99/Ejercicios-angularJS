@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href=" node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TiendaController as tienda">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>
+            {{tienda.producto.nombre}} 
+            <span class="label" ng-class="tienda.producto.stock>= 15 ? 'label-info' : (tienda.producto.stock == 0 ? 'label-danger' : 'label-warning')">Stock: {{tienda.producto.stock}}</span>
+            </h4>
+                <p>{{tienda.producto.precio|currency}}</p>
+                    <img class="img-responsive" ng-src="{{tienda.producto.imagen}}">
+                    <button type="button" class="btn btn-primary pull-right" ng-disabled="tienda.producto.stock===0">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Añadir al carro</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/angular-locale_es-es.js"></script>
+    <script src="scripts/app6.js"></script>
+</body>
+
+</html>
+
+<!-- Observaciones:
+- Utilizamos el atributo ng-class para añadir una clase en función de algún cálculo. Este cálculo lo hemos hecho aquí, pero lo lógico sería mover esta lógica o comportamiento (behaviour en sintaxis angular) al controlador mediante una función. Ver ejercicio 6b
+
+ -->

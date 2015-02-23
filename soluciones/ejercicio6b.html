@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miTienda">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href=" node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="TiendaController as tienda">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>
+            {{tienda.producto.nombre}} 
+            <span class="label" ng-class="tienda.stockClass()">Stock: {{tienda.producto.stock}}</span>
+            </h4>
+                <p>{{tienda.producto.precio|currency}}</p>
+                <img class="img-responsive" ng-src="{{tienda.producto.imagen}}">
+                <button type="button" class="btn btn-primary pull-right" ng-disabled="tienda.producto.stock===0">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Añadir al carro</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="scripts/angular-locale_es-es.js"></script>
+    <script src="scripts/app6b.js"></script>
+</body>
+
+</html>
+
+<!-- Observaciones:
+- Al haber ahora varios productos, deberemos pasar como parámetro al js el stock en cuestión.
+- Ummmm sería conveniente que después de cada 3 productos, hubiera una nueva row, siguiendo el diseño bootstrap.
+ -->
