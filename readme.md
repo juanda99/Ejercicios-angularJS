@@ -1,11 +1,11 @@
-#ejercicios de Angular
-## Versión 1.3. 
+#ejercicios de Angular - Versión 1.3. 
 ## Conceptos:
 - Módulos
 - Directivas
 - Controladores
 - Expresiones
 - Filtros
+
 1. Crea la estructura básica para realizar una aplicación mediante Angular y Bootstrap a partir del fuente ejercicio1.html. Puedes ayudarte de bower o npm para instalar las dependencias. Comprueba su funcionamiento ejecutando el documento html en el navegador y verificando que Angular resuelve la expresión.
 2. Modifica el ejercicio anterior, de modo que por medio el html muestre un artículo definido en el fichero app2.js. Crea y usa el controlador  TiendaController para "pasar" la variable.
 3. Completa el ejercicio anterior de modo que se muestre la imagen del artículo
